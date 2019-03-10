@@ -28,7 +28,7 @@ public class Main {
         return ourSessionFactory.openSession();
     }
 
-    public static void main(final String[] args) throws Exception {
+    public static void main(final String[] args) {
         try (Session session = getSession()) {
             Transaction transaction = session.beginTransaction();
 
