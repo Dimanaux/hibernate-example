@@ -4,16 +4,19 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
+        <!-- connection config -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
         <property name="connection.url">jdbc:postgresql://localhost:5432/hibernate_sample</property>
         <property name="connection.username">postgres</property>
         <property name="connection.password">postgres</property>
 
         <!-- DB schema will be updated if needed -->
-         <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">update</property>
 
+        <!-- log sql queries to std out -->
         <property name="show_sql">true</property>
 
+        <!-- let hibernate know about our classes -->
         <mapping class="com.example.app.User"/>
         <mapping class="com.example.app.Message"/>
     </session-factory>
