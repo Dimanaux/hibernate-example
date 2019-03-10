@@ -1,4 +1,4 @@
-package com.example.app;
+package com.example.app.models;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Entity(name = "com.example.app.Message")
+@Entity(name = "com.example.app.models.Message")
 @Table(name = "message")
 @lombok.Data
 public class Message {
@@ -15,7 +15,7 @@ public class Message {
     @Column(name = "id")
     private Integer id;
 
-    //    @ManyToOne(targetEntity = com.example.app.User.class)
+    //    @ManyToOne(targetEntity = com.example.app.models.User.class)
     @ManyToOne
     @JoinColumn(name = "from_id")
 //    @JoinColumn(name = "from_id", referencedColumnName = "id")
@@ -40,7 +40,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "com.example.app.Message: {\n" +
+        return "com.example.app.models.Message: {\n" +
                 "\tid: " + id + ",\n" +
                 "\tfrom: '" + from.getEmail() + "',\n" +
                 "\tsubject: '" + subject + "',\n" +

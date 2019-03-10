@@ -1,5 +1,7 @@
 package com.example.app;
 
+import com.example.app.models.Message;
+import com.example.app.models.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -47,7 +49,7 @@ public class Main {
             composeMessage(session);
             /* after:
             +++
-            4   1     Hibernate  2019-03-10 14:44  com.example.app.Message from Hibernate! (can be repeated)
+            4   1     Hibernate  2019-03-10 14:44  com.example.app.models.Message from Hibernate! (can be repeated)
              */
 
             // renaming
@@ -89,7 +91,7 @@ public class Main {
         User user = session.load(User.class, 1);
         Message message = new Message();
 //            message.setFrom(user);
-        message.setContent("com.example.app.Message from Hibernate! (can be repeated) " + new Random().nextInt());
+        message.setContent("com.example.app.models.Message from Hibernate! (can be repeated) " + new Random().nextInt());
         message.setRecipients(
                 new LinkedList<User>() {{ add(session.load(User.class, 2)); }}
         );

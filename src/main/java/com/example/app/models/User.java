@@ -1,10 +1,10 @@
-package com.example.app;
+package com.example.app.models;
 
 import javax.persistence.*;
 import java.util.LinkedList;
 import java.util.List;
 
-@Entity(name = "com.example.app.User")
+@Entity(name = "com.example.app.models.User")
 @Table(name = "\"user\"")
 @lombok.Data
 public class User {
@@ -28,7 +28,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "com.example.app.User: {\n" +
+        return "com.example.app.models.User: {\n" +
                 "\tid: " + id + ",\n" +
                 "\temail: '" + email + "',\n" +
                 "\tpassword: '" + password + "',\n" +
